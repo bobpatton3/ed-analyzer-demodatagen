@@ -1,21 +1,15 @@
 package com.bobpatton3.eddatagen.web.controller;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.UUID;
 import com.bobpatton3.eddatagen.persistence.model.Arrival;
-import jakarta.annotation.PostConstruct;
 import com.bobpatton3.eddatagen.service.IArrivalService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,9 +57,6 @@ public class ArrivalController {
 
                 arrivalService.save(new Arrival(
                     UUID.randomUUID(),
-                    "A1 Emergency Physicians",
-                    "Memorial Hospital",
-                    "Main ED",
                     department_id,
                     zonedArrival,
                     rvus,

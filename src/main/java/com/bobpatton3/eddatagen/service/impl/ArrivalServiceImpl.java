@@ -1,7 +1,5 @@
 package com.bobpatton3.eddatagen.service.impl;
 
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

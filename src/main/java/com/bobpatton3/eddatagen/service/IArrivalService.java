@@ -1,7 +1,5 @@
 package com.bobpatton3.eddatagen.service;
 
-import java.util.UUID;
-
 import com.bobpatton3.eddatagen.persistence.model.Arrival;
 
 public interface IArrivalService {

@@ -15,9 +15,6 @@ public class Arrival {
 
     @Id
     private UUID id;
-    private String client_group;
-    private String facility;
-    private String department;
     private UUID department_id;
     private ZonedDateTime arrival_datetime;
     private BigDecimal RVUs;
@@ -30,9 +27,6 @@ public class Arrival {
 
     public Arrival(
             UUID id,
-            String client_group, 
-            String facility, 
-            String department, 
             UUID department_id, 
             ZonedDateTime arrival_datetime, 
             BigDecimal rVUs, 
@@ -41,9 +35,6 @@ public class Arrival {
         ) {
         super();
         this.id = id;
-        this.client_group = client_group;
-        this.facility = facility;
-        this.department = department;
         this.department_id = department_id;
         this.arrival_datetime = arrival_datetime;
         RVUs = rVUs;
@@ -57,30 +48,6 @@ public class Arrival {
 
     public void setId(UUID id) {
         this.id = id;
-    }
-
-    public String getClient_group() {
-        return client_group;
-    }
-
-    public void setClient_group(String client_group) {
-        this.client_group = client_group;
-    }
-
-    public String getFacility() {
-        return facility;
-    }
-
-    public void setFacility(String facility) {
-        this.facility = facility;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
     }
 
     public ZonedDateTime getArrival_datetime() {
@@ -125,13 +92,13 @@ public class Arrival {
 
     @Override
     public String toString() {
-        return "Arrival [id=" + id + ", client_group=" + client_group + ", facility=" + facility + ", department=" + department + ", department_id=" + department_id + ", arrival_datetime=" + arrival_datetime + ", RVUs=" + RVUs + ", CPT=" + CPT + ", age=" + age
+        return "Arrival [id=" + id + ", department_id=" + department_id + ", arrival_datetime=" + arrival_datetime + ", RVUs=" + RVUs + ", CPT=" + CPT + ", age=" + age
             + "]";
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(CPT, RVUs, age, arrival_datetime, client_group, department, department_id, facility, id);
+        return Objects.hash(CPT, RVUs, age, arrival_datetime, department_id, id);
     }
 
     @Override
@@ -143,8 +110,8 @@ public class Arrival {
         if (getClass() != obj.getClass())
             return false;
         Arrival other = (Arrival) obj;
-        return Objects.equals(CPT, other.CPT) && Objects.equals(RVUs, other.RVUs) && age == other.age && Objects.equals(arrival_datetime, other.arrival_datetime) && Objects.equals(client_group, other.client_group)
-            && Objects.equals(department, other.department) && Objects.equals(department_id, other.department_id) && Objects.equals(facility, other.facility) && Objects.equals(id, other.id);
+        return Objects.equals(CPT, other.CPT) && Objects.equals(RVUs, other.RVUs) && age == other.age && Objects.equals(arrival_datetime, other.arrival_datetime)
+            && Objects.equals(department_id, other.department_id) && Objects.equals(id, other.id);
     }
     
     
